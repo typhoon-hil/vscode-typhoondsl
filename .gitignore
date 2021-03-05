@@ -1,0 +1,6 @@
+test-workspace
+vscode-extensions
+/local/
+/dist/
+/node_modules/
+*.vsix

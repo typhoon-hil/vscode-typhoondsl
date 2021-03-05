@@ -1,0 +1,22 @@
+{
+    "comp": {
+        "scope": "typhoon",
+        "prefix": "comp",
+        "body" :"component ${1:type} ${2:name} {\n\t${0}\n}"
+    },
+    "term": {
+        "scope": "typhoon",
+        "prefix": "term",
+        "body" :"${1:name} {\n\tposition = ${2:left:1}\n\tkind = ${3:sp}\n\tdirection = ${4:in}\n\tsp_type {\n\t\tsupported = real\n\t\tdefault = real\n\t}\n}\n${0}"
+    },
+    "prop": {
+        "scope": "typhoon",
+        "prefix": "prop",
+        "body" :"${1:name} {\n\tlabel = \"${2}\"\n\tdescription = \"${3}\"\n\twidget = ${4:edit}\n\ttype = ${5:uint}\n\tdefault_value = ${6:1}\n}\n${0}"
+    },
+    "code": {
+        "scope": "typhoon",
+        "prefix": "code",
+        "body" :"CODE ${1:name}\n\t${0}\nENDCODE"
+    }
+}
