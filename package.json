@@ -1,10 +1,10 @@
 {
   "name": "vscode-typhoondsl",
-	"displayName": "Typhoon DSL",
+  "displayName": "Typhoon DSL",
   "description": "Typhoon DSL extension for VS Code",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "Typhoon-HIL",
-	"icon": "logo.png",
+  "icon": "logo.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/typhoon-hil/vscode-typhoondsl"
@@ -24,29 +24,45 @@
   "contributes": {
     "languages": [
       {
-        "id": "typhoon",
+        "id": "typhoon-tse",
         "extensions": [
           "cmp",
           "tlib",
           "tse"
         ],
-        "configuration": "./languages/typhoon.language-configuration.json"
+        "configuration": "./languages/typhoon-tse.language-configuration.json"
+      },
+      {
+        "id": "typhoon-tml",
+        "extensions": [
+          "tml"
+        ],
+        "configuration": "./languages/typhoon-tml.language-configuration.json"
       }
     ],
     "grammars": [
       {
-        "language": "typhoon",
-        "scopeName": "source.typhoon",
-        "path": "syntaxes/typhoon.json",
+        "language": "typhoon-tse",
+        "scopeName": "source.typhoon-tse",
+        "path": "syntaxes/typhoon-tse.json",
         "embeddedLanguages": {
           "meta.embedded.block.python": "python"
         }
+      },
+      {
+        "language": "typhoon-tml",
+        "scopeName": "source.typhoon-tml",
+        "path": "syntaxes/typhoon-tml.json"
       }
     ],
     "snippets": [
       {
-        "language": "typhoon",
-        "path": "./snippets/typhoon-snippets.json"
+        "language": "typhoon-tse",
+        "path": "./snippets/typhoon-tse-snippets.json"
+      },
+      {
+        "language": "typhoon-tml",
+        "path": "./snippets/typhoon-tml-snippets.json"
       }
     ]
   },
@@ -54,12 +70,12 @@
     "vscode:prepublish": "yarn run package",
     "compile": "webpack",
     "watch": "webpack --watch",
-		"package": "webpack --mode production --devtool hidden-source-map",
-		"test-compile": "tsc -p ./",
-		"test-watch": "tsc -watch -p ./",
-		"pretest": "yarn run test-compile && yarn run lint",
-		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "test-compile": "tsc -p ./",
+    "test-watch": "tsc -watch -p ./",
+    "pretest": "yarn run test-compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
     "@types/vscode": "^1.50.0",

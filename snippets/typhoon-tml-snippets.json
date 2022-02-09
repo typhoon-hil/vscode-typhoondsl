@@ -1,0 +1,22 @@
+{
+    "fn": {
+        "scope": "typhoon-tml",
+        "prefix": "fn",
+        "body" :"fn ${1:name}(${2}) ${3:uint}:\n\t${0}\nend"
+    },
+    "if": {
+        "scope": "typhoon-tml",
+        "prefix": "if",
+        "body" :"if ${1:condition}\n\t${0}\nend"
+    },
+    "for": {
+        "scope": "typhoon-tml",
+        "prefix": "for",
+        "body" :"for ${1:idx} = ${2}\n\t${0}\nend"
+    },
+    "while": {
+        "scope": "typhoon-tml",
+        "prefix": "while",
+        "body" :"while ${1:condition}\n\t${0}\nend"
+    }
+}

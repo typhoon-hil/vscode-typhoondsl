@@ -1,0 +1,117 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "typhoon-tse",
+    "scopeName": "source.typhoon-tse",
+    "foldingStartMarker": "\\{\\s.*$",
+    "foldingStopMarker": "^\\s*.*\\}",
+      "patterns": [
+          {"include": "#python"},
+          {"include": "#common"}
+    ],
+    "repository": {
+        "common": {
+            "patterns": [
+                {"include": "#comment"},
+                {"include": "#common_nocomments"}
+            ]
+        },
+        "comment": {
+            "patterns": [
+                {
+                    "name": "comment.line",
+                    "match": "//.*$"
+                },
+                {
+                    "name": "comment.block",
+                    "begin": "/\\*",
+                    "end": "\\*/"
+                }
+            ]
+        },
+        "common_nocomments": {
+            "patterns": [
+                {"include": "#basetype"},
+                {"include": "#constant"},
+                {"include": "#keyword"},
+                {"include": "#operation"},
+                {"include": "#regular_expression"}
+            ]
+        },
+        "basetype": {
+            "patterns": [
+                {"include": "#string"},
+                {"include": "#number"}
+            ]
+        },
+        "constant": {
+            "name": "constant.language",
+            "match": "True|False"
+        },
+        "string": {
+            "patterns": [
+                {
+                    "name": "string.quoted.single",
+                    "begin": "'",
+                    "end": "'"
+                },
+                {
+                    "name": "string.quoted.double",
+                    "begin": "\"",
+                    "end": "\""
+                }
+            ]
+        },
+        "number": {
+            "patterns": [
+                {
+                    "name": "constant.numeric",
+                    "match": "\\b[+-]?([0-9]*[.])?[0-9]+(e[+-][0-9]+)?\\b"
+                }
+            ]
+        },
+        "keyword": {
+            "patterns": [
+                {
+                    "name": "keyword.control",
+                    "match": "\\b(model|version|default|euler|trapezoidal|exact|auto|component_type|icon|layout|resizable|help_file|previous_names|icon_rotate|label|template|require|description|terminals|properties|configuration|static|dynamic|rotate|no_rotate|text_like|none|horizontal|vertical|both|junction|tag|value|scope|kind|direction|local|global|masked_subsystem|connect|as|comment|START|ENDCOMMENT|int1|int2|inherit|no_evaluate|widget|combo_values|type|default_value|unit|min_value|max_value|group|nonvisible|disabled|readonly|keepline|skip|vector|uint|int|real|string|bool|signal_name|ip_address|generic|edit|combo|checkbox|button|togglebutton|feedthrough|dimension|calc|position|sp_type|supported|expression|left|right|top|bottom|center|pe|sp|in|out|component|locked|visible|terminal|mask|rotation|scale|size|breakpoints|hide_name|hide_terminal_label|up|down|CODE|ENDCODE|port|logically_deleted)\\b"
+                }
+            ]
+        },
+        "operation": {
+            "patterns": [
+                {
+                    "name": "keyword.operator",
+                    "match": "\\{|\\}|=|,|\\[|:|\\]|;"
+                }
+            ]
+        },
+        "regular_expression": {
+            "patterns": [            ]
+        },
+        "python": {
+            "patterns": [
+                {
+                    "begin": "(CODE)\\s+([^\\s]*)",
+                    "end": "ENDCODE",
+                    "contentName": "meta.embedded.block.python",
+                    "patterns": [
+                            {"include": "source.python"}
+                        ],
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control"
+                        },
+                        "2": {
+                            "name": "entity.name.function"
+                        }
+                    },
+                    "endCaptures": {
+                        "0": {
+                            "name": "keyword.control"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

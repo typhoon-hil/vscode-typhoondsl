@@ -1,11 +1,8 @@
 {
     "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-    "name": "typhoon",
-    "scopeName": "source.typhoon",
-    "foldingStartMarker": "\\{\\s.*$",
-    "foldingStopMarker": "^\\s*.*\\}",
-      "patterns": [
-          {"include": "#python"},
+    "name": "typhoon-tml",
+    "scopeName": "source.typhoon-tml",
+    "patterns": [
           {"include": "#common"}
     ],
     "repository": {
@@ -19,12 +16,7 @@
             "patterns": [
                 {
                     "name": "comment.line",
-                    "match": "//.*$"
-                },
-                {
-                    "name": "comment.block",
-                    "begin": "/\\*",
-                    "end": "\\*/"
+                    "match": "#.*$"
                 }
             ]
         },
@@ -34,7 +26,9 @@
                 {"include": "#constant"},
                 {"include": "#keyword"},
                 {"include": "#operation"},
-                {"include": "#regular_expression"}
+                {"include": "#types"},
+                {"include": "#namespaces"},
+                {"include": "#function"}
             ]
         },
         "basetype": {
@@ -45,7 +39,7 @@
         },
         "constant": {
             "name": "constant.language",
-            "match": "True|False"
+            "match": "true|false"
         },
         "string": {
             "patterns": [
@@ -73,7 +67,7 @@
             "patterns": [
                 {
                     "name": "keyword.control",
-                    "match": "\\b(model|version|default|euler|trapezoidal|exact|auto|component_type|icon|layout|resizable|help_file|previous_names|icon_rotate|label|template|require|description|terminals|properties|configuration|static|dynamic|rotate|no_rotate|text_like|none|horizontal|vertical|both|junction|tag|value|scope|kind|direction|local|global|masked_subsystem|connect|as|comment|START|ENDCOMMENT|int1|int2|inherit|no_evaluate|widget|combo_values|type|default_value|unit|min_value|max_value|group|nonvisible|disabled|readonly|keepline|skip|vector|uint|int|real|string|bool|signal_name|ip_address|generic|edit|combo|checkbox|button|togglebutton|feedthrough|dimension|calc|position|sp_type|supported|expression|left|right|top|bottom|center|pe|sp|in|out|component|locked|visible|terminal|mask|rotation|scale|size|breakpoints|hide_name|hide_terminal_label|up|down|CODE|ENDCODE|port|logically_deleted)\\b"
+                    "match": "\\b(type|for|if|else|elseif|while|end|return|break|continue)\\b"
                 }
             ]
         },
@@ -81,33 +75,36 @@
             "patterns": [
                 {
                     "name": "keyword.operator",
-                    "match": "\\{|\\}|=|,|\\[|:|\\]|;"
+                    "match": "\\[|\\]|=|\\*=|/=|%=|\\+=|-=|&=|^=|\\|="
                 }
             ]
         },
-        "regular_expression": {
-            "patterns": [            ]
-        },
-        "python": {
+        "types": {
             "patterns": [
                 {
-                    "begin": "(CODE)\\s+([^\\s]*)",
-                    "end": "ENDCODE",
-                    "contentName": "meta.embedded.block.python",
-                    "patterns": [
-                            {"include": "source.python"}
-                        ],
-                    "beginCaptures": {
+                    "name": "entity.name.type",
+                    "match": "\\b(int|uint|real|bool|str)\\b"
+                }
+            ]
+        },
+        "namespaces": {
+            "patterns": [
+                {
+                    "name": "entity.name.tag",
+                    "match": "\\b(t|p|n)\\b"
+                }
+            ]
+        },
+        "function": {
+            "patterns": [
+                {
+                    "match": "(fn)\\s+(\\w+)",
+                    "captures": {
                         "1": {
                             "name": "keyword.control"
                         },
                         "2": {
                             "name": "entity.name.function"
-                        }
-                    },
-                    "endCaptures": {
-                        "0": {
-                            "name": "keyword.control"
                         }
                     }
                 }

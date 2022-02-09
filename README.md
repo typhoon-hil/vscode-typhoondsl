@@ -1,7 +1,7 @@
 # VS Code extension for Typhoon-HIL DSLs
 
-This extension enables convenient editing of `.tse` and `.lib` and `.cmp` DSL
-files used in the Typhoon-HIL tool-chain.
+This extension enables convenient editing of `.tse`,`.lib`,`.cmp`, and `.tml`
+DSL files used in the Typhoon-HIL tool-chain.
 
 The extension is published on the [VS Code
 marketplace](https://marketplace.visualstudio.com/items?itemName=typhoon-hil.vscode-typhoondsl)
@@ -17,7 +17,9 @@ editor](https://code.visualstudio.com/).
 - Code folding
 - Embedded Python code editing (using
   [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python))
-- Code snippets (`comp`, `term`, `prop`, `code`)
+- Code snippets:
+  - tse/tlib/comp (`comp`, `term`, `prop`, `code`)
+  - tml (`fn`,`if`,`for`, `while`)
 
 
 ## Planned
