@@ -2,7 +2,7 @@
 # Creates extensions and workspace dirs and link this extension
 EXT_DIR="./local/vscode-extensions"
 WSP_DIR="./local/test-workspace"
-EXTENSION="typhoonhil.vscode-typhoondsl-0.1.0"
+EXTENSION="typhoonhil.vscode-typhoondsl-0.2.0"
 
 if [ ! -d $WSP_DIR ]; then
     mkdir -p $WSP_DIR
