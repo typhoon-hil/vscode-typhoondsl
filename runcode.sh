@@ -18,4 +18,5 @@ if [ ! -d "$EXT_DIR/$EXTENSION" ]; then
     ln -s `pwd` "$EXT_DIR/$EXTENSION"
 fi
 
+yarn run package
 code --extensions-dir $EXT_DIR $WSP_DIR

@@ -20,6 +20,7 @@ editor](https://code.visualstudio.com/).
 - Code snippets:
   - tse/tlib/comp (`comp`, `term`, `prop`, `code`)
   - tml (`fn`,`if`,`for`, `while`)
+- Outline and breadcrumbs
 
 
 ## Planned
