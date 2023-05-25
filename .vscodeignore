@@ -12,10 +12,10 @@ vsc-extension-quickstart.md
 **/*.ts
 webpack.config.js
 
-build.sh
+.log
+.tool-versions
+*.sh
 extension_old.js
-genkeywords.sh
 images
-runcode*.sh
 *swp
 *~

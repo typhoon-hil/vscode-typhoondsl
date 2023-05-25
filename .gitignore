@@ -2,3 +2,6 @@ local
 dist
 node_modules
 *.vsix
+/.vscode/
+/.log/
+/.tool-versions
