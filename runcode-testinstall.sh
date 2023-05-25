@@ -2,7 +2,7 @@
 # Script for testing extension from vsix file
 # When code is running install extension from vsix file
 # Workspace is in ./local/test-workspace
-EXT_DIR="./local/vscode-extensions"
+EXT_DIR="./local/vscode-extensions-testinstall"
 WSP_DIR="./local/test-workspace"
 EXTENSION="./vscode-typhoondsl-0.2.0.vsix"
 
