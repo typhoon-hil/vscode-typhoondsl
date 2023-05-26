@@ -53,6 +53,7 @@ export function deactivate() {}
 class TyphoonDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
     private binaryPath: string | undefined;
     private lastKnownGood: vscode.DocumentSymbol[] | undefined;
+    private lastKnownGoodFile: string | undefined;
 
     constructor(context: vscode.ExtensionContext) {
         if (process.platform === 'win32') {
@@ -85,7 +86,7 @@ class TyphoonDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
                 const childProcess = spawnSync(this.binaryPath, ['-j'], { input: document.getText() });
 
                 if (childProcess.status !== 0) {
-                    if (this.lastKnownGood) {
+                    if (this.lastKnownGood && this.lastKnownGoodFile === document.fileName) {
                         resolve(this.lastKnownGood)
                     } else {
                         reject(`Error calling outliner. ${childProcess.error}`);
@@ -95,6 +96,7 @@ class TyphoonDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
                     // Cache for further use when the input can't be parsed due to
                     // syntex errors
                     this.lastKnownGood = symbols;
+                    this.lastKnownGoodFile = document.fileName
                     resolve(symbols);
                 }
 
