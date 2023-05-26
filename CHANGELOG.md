@@ -4,6 +4,9 @@ All notable changes to the "vscode-typhoondsl" extension will be documented in t
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
+## [0.3.0] released: 2023-05-26
 
 - Outline and breadcrumbs support.
+
+
+[0.3.0]: https://github.com/typhoon-hil/vscode-typhoondsl/tree/0.3.0
