@@ -2,7 +2,7 @@
   "name": "vscode-typhoondsl",
   "displayName": "Typhoon DSL",
   "description": "Typhoon DSL extension for VS Code",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "publisher": "Typhoon-HIL",
   "icon": "logo.png",
   "repository": {
