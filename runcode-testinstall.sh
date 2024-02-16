@@ -4,7 +4,7 @@
 # Workspace is in ./local/test-workspace
 EXT_DIR="./local/vscode-extensions-testinstall"
 WSP_DIR="./local/test-workspace"
-EXTENSION="./vscode-typhoondsl-0.3.2.vsix"
+EXTENSION="./vscode-typhoondsl-0.4.0.vsix"
 
 rm -fr $EXT_DIR
 mkdir -p $EXT_DIR
