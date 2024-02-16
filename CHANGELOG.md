@@ -4,6 +4,11 @@ All notable changes to the "vscode-typhoondsl" extension will be documented in t
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.4.0] released: 2024-02-16
+
+- upgrade to Rustemo 0.5.0
+- fix: parsing of some .tlib files using keywords for comp. property names
+
 ## [0.3.2] released: 2023-05-27
 
 - fix: outliner parsing with non-ascii unicode chars
